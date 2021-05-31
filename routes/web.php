@@ -12,6 +12,6 @@ use App\Http\Controllers\ArticleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','ArticleController@index');
-Route::get('/articles','ArticleController@index');
-Route::get('/articles/detail/{id}','ArticleController@detail');
+Route::get('/','App\Http\Controllers\ArticleController@index');
+Route::get('/articles','App\Http\Controllers\ArticleController@index');
+Route::get('/articles/detail/{id}','App\Http\Controllers\ArticleController@detail');

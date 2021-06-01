@@ -15,3 +15,7 @@ use App\Http\Controllers\ArticleController;
 Route::get('/','App\Http\Controllers\ArticleController@index');
 Route::get('/articles','App\Http\Controllers\ArticleController@index');
 Route::get('/articles/detail/{id}','App\Http\Controllers\ArticleController@detail');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

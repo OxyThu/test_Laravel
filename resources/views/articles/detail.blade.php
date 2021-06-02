@@ -12,5 +12,26 @@
                     <a class="btn btn-warning" href="{{url("/articles/delete/$article->id")}}">Delete</a>
                 </div>
             </div>
+            <ul class="list-group">
+                <li class="list-group-item active">
+                    <b>Comments ({{count($article->comments)}})</b>
+                </li>
+                @foreach($article->comments as $comment)
+                    <li class="list-group-item">
+                        {{$comment->content}}
+                        <a href="{{url("/comments/delete/$comment->id")}}" class="close">
+                            &times;
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+
+            <form action="{{url('/comments/add')}}" method="post">
+                @csrf
+                <input type="hidden" name="article_id" value="{{$article->id}}">
+                <textarea name="content" class="form-control mb-2" placeholder="New Comment">
+                </textarea>
+                <input type="submit" value="Add Comment" class="btn btn-secondary">
+            </form>
     </div>
 @endsection

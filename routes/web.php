@@ -18,6 +18,9 @@ Route::post('/articles/add','App\Http\Controllers\ArticleController@create');
 Route::get('/articles/add','App\Http\Controllers\ArticleController@add');
 Route::get('/articles/delete/{id}','App\Http\Controllers\ArticleController@delete');
 
+Route::post('/comments/add','App\Http\Controllers\CommentController@create');
+Route::get('/comments/delete/{id}','App\Http\Controllers\CommentController@delete');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
